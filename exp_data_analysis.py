@@ -27,6 +27,7 @@ class ExpDataAnalysis:
     def getCpuDistribution(self):
         sns.countplot(y='Cpu', data=self.df)
         plt.title('Cpu Distribution')
+        plt.xticks(rotation=90)
         plt.show()
 
     def getScreenSizeDistribution(self):
