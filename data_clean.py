@@ -15,6 +15,9 @@ class CleanData:
 
     def formatScreenSize(self):
         self.df['Inches'] = self.df['Inches'].astype(float)
+    
+    def seperate_memory_type(self):
+        self.df['MemoryType'] = self.df['Memory'].apply(lambda x: x.split(' ')[-1])
+        self.df['Memory'] = self.df['Memory'].apply(lambda x: x.split(' ')[0])
 
-    def check_missing_values(self):
-        return self.df.isnull().sum()
+    

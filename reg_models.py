@@ -1,0 +1,30 @@
+class RegModel:
+    def __init__(self, df):
+        self.df = df
+
+    def linearRegression(self):
+        X = self.df[['Ram', 'Cpu', 'ScreenResolution']]
+        y = self.df['Price_euros']
+        X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3, random_state=0)
+        reg = LinearRegression()
+        reg.fit(X_train, y_train)
+        y_pred = reg.predict(X_test)
+        return mean_squared_error(y_test, y_pred)
+    
+    def randomForest(self):
+        X = self.df[['Ram', 'Cpu', 'ScreenResolution']]
+        y = self.df['Price_euros']
+        X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3, random_state=0)
+        reg = RandomForestRegressor()
+        reg.fit(X_train, y_train)
+        y_pred = reg.predict(X_test)
+        return mean_squared_error(y_test, y_pred)
+    
+    def gradientBoosting(self):
+        X = self.df[['Ram', 'Cpu', 'ScreenResolution']]
+        y = self.df['Price_euros']
+        X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3, random_state=0)
+        reg = GradientBoostingRegressor()
+        reg.fit(X_train, y_train)
+        y_pred = reg.predict(X_test)
+        return mean_squared_error(y_test, y_pred)
