@@ -20,4 +20,7 @@ class CleanData:
         self.df['MemoryType'] = self.df['Memory'].apply(lambda x: x.split(' ')[-1])
         self.df['Memory'] = self.df['Memory'].apply(lambda x: x.split(' ')[0])
 
+    def categorize_by_price(self):
+        self.df['PriceRange'] = pd.qcut(self.df['Price_euros'], q=3, labels=False)
+
     
