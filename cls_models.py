@@ -10,7 +10,7 @@ class ClsModel:
         self.df = df
 
     def randomForest(self):
-        X = self.df[['Ram', 'Cpu', 'ScreenResolution', 'Resolution_Width', 'Resolution_Height', 'Inches', 'Memory', 'MemoryType']]
+        X = self.df[['Ram', 'Cpu', 'Resolution_Width', 'Resolution_Height', 'Inches', 'Memory', 'MemoryType']]
         y = self.df['Price_euros']
         X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3, random_state=0)
         cls = RandomForestClassifier()
@@ -19,7 +19,7 @@ class ClsModel:
         return classification_report(y_test, y_pred)
     
     def gradientBoosting(self):
-        X = self.df[['Ram', 'Cpu', 'ScreenResolution', 'Resolution_Width', 'Resolution_Height', 'Inches', 'Memory', 'MemoryType']]
+        X = self.df[['Ram', 'Cpu', 'Resolution_Width', 'Resolution_Height', 'Inches', 'Memory', 'MemoryType']]
         y = self.df['Price_euros']
         X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3, random_state=0)
         cls = GradientBoostingClassifier()
@@ -28,7 +28,7 @@ class ClsModel:
         return classification_report(y_test, y_pred)
     
     def logisticRegression(self):
-        X = self.df[['Ram', 'Cpu', 'ScreenResolution', 'Resolution_Width', 'Resolution_Height', 'Inches', 'Memory', 'MemoryType']]
+        X = self.df[['Ram', 'Cpu', 'Resolution_Width', 'Resolution_Height', 'Inches', 'Memory', 'MemoryType']]
         y = self.df['Price_euros']
         X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3, random_state=0)
         cls = LogisticRegression()
