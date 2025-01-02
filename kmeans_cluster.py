@@ -8,21 +8,20 @@ from kneed import KneeLocator
 
 class KMeansCluster:
     def find_optimal_k(self, X):
+        scaler = StandardScaler()
+        X_scaled = scaler.fit_transform(X)
         wcss = []
         for i in range(1, 11):
             kmeans = KMeans(n_clusters=i, init='k-means++', max_iter=300, n_init=10, random_state=0)
-            kmeans.fit(X)
+            kmeans.fit(df)
             wcss.append(kmeans.inertia_)
         plt.plot(range(1, 11), wcss)
         plt.title('Elbow Method')
         plt.xlabel('Number of clusters')
         plt.ylabel('WCSS')
         plt.show()
-        return wcss
     
-    def calculate_optimal_k(self, X, wcss):
-        kl = KneeLocator(range(1,11),wcss, curve="convex", direction="decreasing")
-        return kl.elbow
-
-    
+    def kmeans(self, X, n_clusters):
+        plt.scatter(X[:, 0], X[:, 1], c=n_clusters)
+        plt.show()
     
