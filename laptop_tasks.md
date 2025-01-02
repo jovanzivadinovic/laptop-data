@@ -25,11 +25,11 @@
 - **Evaluation Metric:** Accuracy, Precision, Recall, F1 Score.
 - **Objective:** Build a classification model to identify the price range of laptops.
 
-## 6. Clustering - Not Done
+## 6. Clustering - Done
 - **Task:** Group laptops into clusters based on their specifications (e.g., screen size, processor type, RAM, and GPU). Use clustering algorithms like K-Means and visualize the clusters.
 - **Objective:** Discover hidden patterns in the dataset to group laptops by similarity.
 
-## 7. Brand Analysis - Not Done
+## 7. Brand Analysis - Done
 - **Task:** Analyze the average price, performance specs, and other key features for each brand. Identify the brands offering the best value for money.
 - **Objective:** Provide actionable insights into brand pricing and feature differences.
 
