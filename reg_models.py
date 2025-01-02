@@ -1,3 +1,9 @@
+from sklearn.model_selection import train_test_split
+from sklearn.linear_model import LinearRegression
+from sklearn.ensemble import RandomForestRegressor, GradientBoostingRegressor
+from sklearn.metrics import mean_squared_error, root_mean_squared_error
+
+
 class RegModel:
     def __init__(self, df):
         self.df = df
