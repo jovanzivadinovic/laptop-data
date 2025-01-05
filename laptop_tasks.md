@@ -1,11 +1,11 @@
 
 # Data Science and Machine Learning Tasks for `laptop_price.csv`
 
-## 1. Exploratory Data Analysis - Done
+## 1. Exploratory Data Analysis
 - **Task:** Perform exploratory data analysis (EDA) on the dataset. Identify patterns in laptop prices, distributions of features like brand, processor type, RAM size, and screen resolution. Visualize the relationships between different features and price.
 - **Objective:** Gain insights into key factors influencing laptop prices.
 
-## 2. Data Cleaning - Done (add other functions if needed)
+## 2. Data Cleaning
 - **Task:** Clean the dataset by addressing missing or inconsistent values. For example, standardize the format for screen size, processor type, and storage capacity if needed. Remove or impute missing values.
 - **Objective:** Ensure the dataset is consistent and ready for analysis.
 
@@ -37,7 +37,7 @@
 - **Task:** Train a machine learning model (e.g., Random Forest) to predict laptop prices and use feature importance methods (e.g., SHAP values) to determine the most important factors affecting price.
 - **Objective:** Identify key drivers of laptop prices.
 
-## 9. Price Trend Analysis - Not Done
+## 9. Price Trend Analysis
 - **Task:** Analyze how laptop prices vary based on specific features such as:
   - Processor type (Intel vs AMD)
   - GPU type (Integrated vs Dedicated)
