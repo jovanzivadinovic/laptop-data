@@ -1,8 +1,6 @@
 
 # Laptop Price Analysis and Prediction Project
 
----
-
 ## Folder Structure
 
 ```
