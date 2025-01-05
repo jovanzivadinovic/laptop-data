@@ -66,7 +66,7 @@ The `tasks.ipynb` file serves as an interactive environment for:
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/username/laptop-price-analysis.git
+   git clone https://github.com/jovanzivadinovic/laptop-data.git
    ```
 2. Install dependencies:
    ```bash
