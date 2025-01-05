@@ -6,15 +6,17 @@
 ## Folder Structure
 
 ```
-├── cls_models.py         # Classification models (Random Forest, Gradient Boosting, Logistic Regression)
-├── data_clean.py         # Data cleaning and preprocessing functions
-├── exp_data_analysis.py  # Exploratory Data Analysis (EDA) and visualizations
-├── helpers.py            # Helper functions for data processing and visualizations
-├── kmeans_cluster.py     # Clustering using K-Means algorithm
-├── reg_models.py         # Regression models (Linear Regression, Random Forest, Gradient Boosting)
-├── laptop_price.csv      # Dataset used for analysis (from Kaggle)
-├── laptop_tasks.md       # Overview of tasks performed in the project
-├── tasks.ipynb           # Jupyter Notebook for executing tasks interactively
+├── modules/
+│   ├── cls_models.py         # Classification models (Random Forest, Gradient Boosting, Logistic Regression)
+│   ├── data_clean.py         # Data cleaning and preprocessing functions
+│   ├── exp_data_analysis.py  # Exploratory Data Analysis (EDA) and visualizations
+│   ├── helpers.py            # Helper functions for data processing and visualizations
+│   ├── kmeans_cluster.py     # Clustering using K-Means algorithm
+│   ├── reg_models.py         # Regression models (Linear Regression, Random Forest, Gradient Boosting)
+├── laptop_price.csv          # Dataset used for analysis (from Kaggle)
+├── laptop_tasks.md           # Overview of tasks performed in the project
+├── tasks.ipynb               # Jupyter Notebook for executing tasks interactively
+├── requirements.txt          # List of Python dependencies for the modules
 ```
 
 ---
@@ -81,10 +83,4 @@ The `tasks.ipynb` file serves as an interactive environment for:
 
 ## Acknowledgements
 
-- **Dataset Source:** [Laptop Price Dataset on Kaggle](https://www.kaggle.com/)
-
----
-
-## License
-
-This project is licensed under the MIT License. See the `LICENSE` file for details.
+- **Dataset Source:** [Laptop Price Dataset on Kaggle](https://www.kaggle.com/datasets/muhammetvarl/laptop-price?resource=download)
