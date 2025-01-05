@@ -28,6 +28,16 @@ class CleanData:
         df['PriceRange'] = pd.qcut(df['Price_euros'], q=3, labels=False)
         return df
     
-    def turn_to_categorical(self, df, column_name):
-        df[column_name] = pd.factorize(df[column_name])[0]
+    def encode_column(self, le, df, column_name):
+        values = df[column_name].unique()
+        le.fit(values)
+        df[column_name] = le.transform(df[column_name])
+        return df
+    
+    def seperate_cpu_type(self, df):
+        df[['Cpu', 'CpuModel']] = df['Cpu'].str.split(' ', n=1, expand=True)
+        return df
+    
+    def seperate_gpu_type(self, df):
+        df[['Gpu', 'GpuModel']] = df['Gpu'].str.split(' ', n=1, expand=True)
         return df

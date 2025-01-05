@@ -4,6 +4,7 @@ import pandas as pd
 from sklearn.cluster import KMeans
 from sklearn.preprocessing import StandardScaler
 from kneed import KneeLocator
+from sklearn.model_selection import train_test_split
 
 
 class KMeansCluster:
@@ -23,7 +24,12 @@ class KMeansCluster:
         return wcss
     
     def kmeans(self, X, n_clusters):
-        plt.scatter(X.iloc[:, 0], X.iloc[:, 1], c=n_clusters) 
+        kmeans = KMeans(n_clusters=n_clusters, init="k-means++")
+        scaler = StandardScaler()
+        X_scaled = scaler.fit_transform(X)
+        labels = kmeans.fit_predict(X_scaled)
+        plt.scatter(X.iloc[:, 0], X.iloc[:, 1], c=labels) 
+        plt.tight_layout()
         plt.show()
 
     

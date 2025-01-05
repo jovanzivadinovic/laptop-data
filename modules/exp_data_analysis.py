@@ -35,7 +35,7 @@ class ExpDataAnalysis:
         plt.show()
 
     def getScreenSizeDistribution(self):
-        sns.countplot(y='ScreenResolution', data=self.df)
+        sns.countplot(y='Inches', data=self.df)
         plt.title('Screen Size Distribution')
         plt.tight_layout()
         plt.show()
@@ -53,24 +53,30 @@ class ExpDataAnalysis:
         plt.show()
 
     def getScreenSizePriceRelation(self):
-        sns.boxplot(x='ScreenResolution', y='Price_euros', data=self.df)
+        sns.boxplot(x='Inches', y='Price_euros', data=self.df)
         plt.title('Screen Size-Price Relation')
+        plt.xticks(rotation=90)
         plt.tight_layout()
         plt.show()
 
     def getCompanyPriceRelation(self):
         sns.boxplot(x='Company', y='Price_euros', data=self.df)
         plt.title('Brand-Price Relation')
+        plt.xticks(rotation=90)
         plt.tight_layout()
         plt.show()
 
     def getCorrelationMatrix(self):
-        # plt.title('Correlation Matrix')
-        return self.df.corr()
+        numeric_df = self.df[["Inches", "Ram", "Memory", "Price_euros"]]
+        correlation_matrix = numeric_df.corr()
+        sns.heatmap(correlation_matrix, annot=True, cmap='coolwarm', fmt='.2f', linewidths=0.5, vmin=-1, vmax=1)
+        plt.title('Correlation Matrix')
+        plt.show()
 
     def getStatInsights(self):
-        # plt.title('Statistical Insights')
-        return self.df.describe()
+        numeric_df = self.df[["Inches", "Ram", "Memory", "Price_euros"]]
+
+        return numeric_df.describe()
     
     def brand_analysis(self):
         brand_analysis = self.df.groupby('Company').agg({
@@ -79,7 +85,28 @@ class ExpDataAnalysis:
             'Inches': 'mean',
         }).reset_index()
 
+        sns.barplot(x='Company', y='Price_euros', data=brand_analysis)
+        plt.title('Average Price by Company')
+        plt.xticks(rotation=90) 
+        plt.tight_layout()
+        plt.show()
+
+        sns.barplot(x='Company', y='Ram', data=brand_analysis)
+        plt.title('Average RAM by Company')
+        plt.xticks(rotation=90)  
+        plt.tight_layout()
+        plt.show()
+
+        plt.figure(figsize=(10, 6))
+        sns.barplot(x='Company', y='Inches', data=brand_analysis)
+        plt.title('Average Screen Size by Company')
+        plt.xticks(rotation=90)
+        plt.tight_layout()
+        plt.show()
+
         return brand_analysis
+
+
 
 
 
